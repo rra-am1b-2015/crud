@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<style>
+input, select
+{
+	width:200px;
+}
+input[type="radio"]
+{
+	width:58px;
+}
+</style>
+<html>
+ <head>
+	<title>Personaliaformulier</title>
+ </head>
+ <body>
+	<h3>Vul hieronder uw gegevens in</h3>
+	
+	
+	<form action="registratie.php" method="post">
+		<table>
+			<tr>
+				<td>voornaam: </td>
+				<td><input type="text" name="voornaam"></td>
+			</tr>
+			<tr>
+				<td>tussenvoegsel: </td>
+				<td><input type="text" name="tussenvoegsel"></td>
+			</tr>
+			<tr>
+				<td>achternaam: </td>
+				<td><input type="text" name="achternaam"></td>
+			</tr>
+			<tr>
+				<td>e-mail: </td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>wachtwoord:</td>
+				<td><input type="password" name="wachtwoord"></td>
+			</tr>
+			<tr>
+				<td>leeftijd: </td>
+				<td><input type="number" name="leeftijd" min="18" max="122"></td>
+			</tr>
+			<tr>
+				<td>haarkleur: </td>
+				<td>
+					<select name="haarkleur">
+						<option>--kies een haarkleur--</option>
+						<option value="023-bruin">bruin</option>	
+						<option value="024-blond">blond</option>
+						<option value="025-grijs">grijs</option>
+						<option value="026-rood">peentjesrood</option>
+						<option value="027-zwart">zwart</option>
+						<option value="028-roze">roze</option>
+					</select>
+				</td>				
+			</tr>
+			<tr>
+				<td>geslacht: </td>
+				<td><input type="radio" name="geslacht" value="man">man
+					  <input type="radio" name="geslacht" value="vrouw">vrouw
+				</td>
+			</tr>
+			<tr>
+				<td>geboortedatum: </td>
+				<td><input type="date" name="geboortedatum"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="verstuur"></td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	<a href="index.html">ga terug</a>
+ </body>
+</html>
