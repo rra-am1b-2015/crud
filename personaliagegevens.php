@@ -15,7 +15,9 @@
 	
 	$result = mysqli_query($conn, $query) or die("query-fout: ".$query." De MySQl-server meldt het volgende: ".mysqli_error($conn));
 	
-	mysqli_fetch_array($result);
+	$result_array = mysqli_fetch_assoc($result);
+	
+	var_dump($result_array);
 	
 	// Gegevens opslaan in aparte variabelen
 	$fruit1 = "appel";
@@ -24,15 +26,42 @@
 	
 	echo "Ik houd van: ".$fruit1.", ".$fruit2." en ".$fruit3."<br>";
 	
-	// Gegevens opslaan in een array
+	// Gegevens opslaan in een geindexeerde array
 	$fruit = array("kiwi", "banaan", "sharon fruit", );
 	
 	echo "In mijn fruit array zitten de volgende fruitsoorten: ".
-			$fruit[0].", ".$fruit[1]." en ".$fruit[2];
+			$fruit[0].", ".$fruit[1]." en ".$fruit[2]."<br>";
 			
-	// Maak een array auto die 5 verschillende merken auto's in zich heeft
+	// Maak een geindexeerde array auto die 5 verschillende merken auto's in zich heeft
 	
+	$auto = array("Ford", "Audi", "Citroen", 'Mazda', "Mercedes");
 	
+	echo "In mijn garage staan de volgende merken: ".
+			$auto[0].", ".$auto[1].", ".$auto[2].", ".$auto[3].", ".$auto[4]."<br>";
+	
+	// Dit is een associatief array.
+	
+	$game = array("naamgame" => "KingsValley I",
+				  "uitgever" => "Konami", 
+				  "releasejaar" => 1985, 
+				  "gamegenre" => "Platformer",
+				  "rating" => 10,
+				  "moeilijkheidsgraad" => 5);
+	
+	echo "Beste game ooit:<br>".
+		  "Naam: ".$game["naamgame"]."<br>".
+		  "Uitgever: ".$game["uitgever"]."<br>".
+		  "Releasejaar: ".$game["releasejaar"]."<br>".
+		  "Gamegenre: ".$game["gamegenre"]."<br>".
+		  "Rating: ".$game["rating"]."<br>".
+		  "moeilijkheidsgraad: ".$game["moeilijkheidsgraad"]."<br>";
+		  
+	echo "Het aantal elementen in mijn game_array is: ".count($game)."<br>";
+	echo "De namen van velden van mijn associatieve array zijn: ".array_keys($game)[5];
+	
+	var_dump($game);
+		 
+		 
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +71,11 @@
  </head>
  <body>
   <h3>Records uit de tabel personalia</h3>
-  
+	<table>
+		<tr>
+			<td><?php echo $result_array["id"]; ?></td>
+			<td><?php echo $result_array["voornaam"]; ?><td>
+		</tr>
+	</table>
  </body>
 </html>
