@@ -29,7 +29,16 @@
 	
 	while ( $result_array = mysqli_fetch_assoc($result) )
 	{
-		echo "Er is een record gevonden in de database".$result_array["achternaam"]."<br>";
+		echo $result_array["id"]." | ".
+			 $result_array["voornaam"]." | ".
+			 $result_array["tussenvoegsel"]." | ".
+			 $result_array["achternaam"]." | ".
+			 $result_array["email"]." | ".
+			 $result_array["wachtwoord"]." | ".
+			 $result_array["haarkleur"]." | ".
+			 $result_array["geboortedatum"]." | ".
+			 $result_array["leeftijd"]."<br>";
+			 
 	}
 	
 	mysqli_data_seek($result, 0);
