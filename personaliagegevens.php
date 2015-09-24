@@ -15,9 +15,27 @@
 	
 	$result = mysqli_query($conn, $query) or die("query-fout: ".$query." De MySQl-server meldt het volgende: ".mysqli_error($conn));
 	
-	$result_array = mysqli_fetch_assoc($result);
+	//$result_array = mysqli_fetch_assoc($result);
 	
 	var_dump($result_array);
+	
+	$teller = 0;
+	
+	while ( $teller < 100 )
+	{
+		echo '$teller is kleiner dan 4<br>';
+		$teller = $teller + 1;
+	}
+	
+	while ( $result_array = mysqli_fetch_assoc($result) )
+	{
+		echo "Er is een record gevonden in de database".$result_array["achternaam"]."<br>";
+	}
+	
+	mysqli_data_seek($result, 0);
+	$result_array = mysqli_fetch_assoc($result);
+	
+	
 	
 	/*
 	Wat is nu een array??????????????????????
