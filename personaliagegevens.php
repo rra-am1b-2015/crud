@@ -19,6 +19,9 @@
 	
 	var_dump($result_array);
 	
+	/*
+	Wat is nu een array??????????????????????
+	
 	// Gegevens opslaan in aparte variabelen
 	$fruit1 = "appel";
 	$fruit2 = "peer";
@@ -60,11 +63,25 @@
 	echo "De namen van velden van mijn associatieve array zijn: ".array_keys($game)[5];
 	
 	var_dump($game);
-		 
+	*/	 
 		 
 ?>
 
 <!DOCTYPE html>
+<style>
+table, td, th
+{
+	border: 1px solid grey;
+	border-collapse:collapse;
+	padding:7;
+}
+
+html, table
+{
+	font-family:Verdana;
+	font-size:11px;
+}
+</style>
 <html>
  <head>
 	<title></title>
@@ -73,8 +90,26 @@
   <h3>Records uit de tabel personalia</h3>
 	<table>
 		<tr>
+			<th><?php echo array_keys($result_array)[0]; ?></th>
+			<th><?php echo array_keys($result_array)[1]; ?></th>
+			<th><?php echo array_keys($result_array)[2]; ?></th>
+			<th><?php echo array_keys($result_array)[3]; ?></th>
+			<th><?php echo array_keys($result_array)[4]; ?></th>
+			<th><?php echo array_keys($result_array)[5]; ?></th>
+			<th><?php echo array_keys($result_array)[6]; ?></th>
+			<th><?php echo array_keys($result_array)[7]; ?></th>
+			<th><?php echo array_keys($result_array)[8]; ?></th>
+		</tr>
+		<tr>
 			<td><?php echo $result_array["id"]; ?></td>
-			<td><?php echo $result_array["voornaam"]; ?><td>
+			<td><?php echo $result_array["voornaam"]; ?></td>
+			<td><?php echo $result_array["tussenvoegsel"]; ?></td>
+			<td><?php echo $result_array["achternaam"]; ?></td>
+			<td><?php echo $result_array["email"]; ?></td>
+			<td><?php echo $result_array["wachtwoord"]; ?></td>
+			<td><?php echo $result_array["leeftijd"]; ?></td>
+			<td><?php echo $result_array["haarkleur"]; ?></td>
+			<td><?php echo $result_array["geboortedatum"]; ?></td>
 		</tr>
 	</table>
  </body>
