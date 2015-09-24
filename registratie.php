@@ -57,7 +57,7 @@
 	}
 	
 	// var_dump($_POST) geeft de waarde weer van het post-array
-	var_dump($_POST);
+	//var_dump($_POST);
 	
 	$query = "INSERT INTO `personalia` (`id`,
 			                            `voornaam`,
@@ -83,7 +83,7 @@
 	mysqli_close($conn);
 	
 	echo "Bedankt voor het registreren. Uw gegevens zijn succesvol verwerkt. U wordt doorgestuurd naar homepage.";
-	header("refresh:300; url= index.html");
+	header("refresh:3; url= index.html");
 	
 	
 ?>
