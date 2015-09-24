@@ -17,8 +17,9 @@
 	
 	//$result_array = mysqli_fetch_assoc($result);
 	
-	var_dump($result_array);
+	//var_dump($result_array);
 	
+	/*
 	$teller = 0;
 	
 	while ( $teller < 100 )
@@ -27,6 +28,9 @@
 		$teller = $teller + 1;
 	}
 	
+	*/
+	
+	/*
 	while ( $result_array = mysqli_fetch_assoc($result) )
 	{
 		echo $result_array["id"]." | ".
@@ -43,7 +47,7 @@
 	
 	mysqli_data_seek($result, 0);
 	$result_array = mysqli_fetch_assoc($result);
-	
+	*/
 	
 	
 	/*
@@ -100,7 +104,7 @@ table, td, th
 {
 	border: 1px solid grey;
 	border-collapse:collapse;
-	padding:7;
+	padding:7px;
 }
 
 html, table
@@ -116,28 +120,38 @@ html, table
  <body>
   <h3>Records uit de tabel personalia</h3>
 	<table>
-		<tr>
-			<th><?php echo array_keys($result_array)[0]; ?></th>
-			<th><?php echo array_keys($result_array)[1]; ?></th>
-			<th><?php echo array_keys($result_array)[2]; ?></th>
-			<th><?php echo array_keys($result_array)[3]; ?></th>
-			<th><?php echo array_keys($result_array)[4]; ?></th>
-			<th><?php echo array_keys($result_array)[5]; ?></th>
-			<th><?php echo array_keys($result_array)[6]; ?></th>
-			<th><?php echo array_keys($result_array)[7]; ?></th>
-			<th><?php echo array_keys($result_array)[8]; ?></th>
-		</tr>
-		<tr>
-			<td><?php echo $result_array["id"]; ?></td>
-			<td><?php echo $result_array["voornaam"]; ?></td>
-			<td><?php echo $result_array["tussenvoegsel"]; ?></td>
-			<td><?php echo $result_array["achternaam"]; ?></td>
-			<td><?php echo $result_array["email"]; ?></td>
-			<td><?php echo $result_array["wachtwoord"]; ?></td>
-			<td><?php echo $result_array["leeftijd"]; ?></td>
-			<td><?php echo $result_array["haarkleur"]; ?></td>
-			<td><?php echo $result_array["geboortedatum"]; ?></td>
-		</tr>
+		
+<?php 
+		$result_array = mysqli_fetch_assoc($result);
+		echo "<tr>
+					<th>".array_keys($result_array)[0]."</th>
+					<th>".array_keys($result_array)[1]."</th>
+					<th>".array_keys($result_array)[2]."</th>
+					<th>".array_keys($result_array)[3]."</th>
+					<th>".array_keys($result_array)[4]."</th>
+					<th>".array_keys($result_array)[5]."</th>
+					<th>".array_keys($result_array)[6]."</th>
+					<th>".array_keys($result_array)[7]."</th>
+					<th>".array_keys($result_array)[8]."</th>
+		  	 </tr>";
+			 
+		mysqli_data_seek($result, 0);
+		
+		while ( $result_array = mysqli_fetch_assoc($result) )
+		{
+			echo "<tr>
+					<td>".$result_array["id"]."</td>
+					<td>".$result_array["voornaam"]."</td>
+					<td>".$result_array["tussenvoegsel"]."</td>
+					<td>".$result_array["achternaam"]."</td>
+					<td>".$result_array["email"]."</td>
+					<td>".$result_array["wachtwoord"]."</td>
+					<td>".$result_array["leeftijd"]."</td>
+					<td>".$result_array["haarkleur"]."</td>
+					<td>".$result_array["geboortedatum"]."</td>
+				</tr>";
+		}
+?>
 	</table>
  </body>
 </html>
