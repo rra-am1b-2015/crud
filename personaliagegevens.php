@@ -13,7 +13,7 @@
 	
 	$query = "SELECT * FROM `personalia`";
 	
-	$result = mysqli_query($conn, $query) or die("query-fout: ".$query." De MySQl-server meldt het volgende: ".mysqli_error($conn));	 
+	$result = mysqli_query($conn, $query) or die("query-fout: ".$query." De MySQl-server meldt het volgende: ".mysqli_error($conn)); 	 
 ?>
 
 <!DOCTYPE html>
@@ -71,5 +71,6 @@ html, table
 		}
 ?>
 	</table>
+	<a href="index.html"><img src="icons/edit.png" alt="potlood"></a>
  </body>
 </html>
