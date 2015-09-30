@@ -51,6 +51,7 @@ html, table
 					<th>".array_keys($result_array)[6]."</th>
 					<th>".array_keys($result_array)[7]."</th>
 					<th>".array_keys($result_array)[8]."</th>
+					<th></th>
 		  	 </tr>";
 			 
 		mysqli_data_seek($result, 0);
@@ -67,10 +68,15 @@ html, table
 					<td>".$result_array["leeftijd"]."</td>
 					<td>".$result_array["haarkleur"]."</td>
 					<td>".$result_array["geboortedatum"]."</td>
+					<td>
+						<a href='update_personalia.php?schoenmaat=44&opleiding=TL'>
+							<img src='icons/edit.png' alt='potlood'>
+						</a>
+					</td>
 				</tr>";
 		}
 ?>
 	</table>
-	<a href="index.html"><img src="icons/edit.png" alt="potlood"></a>
+	<a href="index.html">terug naar index</a>
  </body>
 </html>
