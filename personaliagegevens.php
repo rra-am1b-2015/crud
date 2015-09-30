@@ -1,15 +1,5 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "am1b_inlogregistratie";	
-	
-	$conn = mysqli_connect($servername, $username, $password, $dbname);
-	
-	if (!$conn)
-	{
-		die("Er is geen verbinding met de mysql-server gemaakt");
-	}
+	include("db_connect.php");
 	
 	$query = "SELECT * FROM `personalia`";
 	
@@ -69,7 +59,7 @@ html, table
 					<td>".$result_array["haarkleur"]."</td>
 					<td>".$result_array["geboortedatum"]."</td>
 					<td>
-						<a href='update_personalia.php?schoenmaat=44&opleiding=TL'>
+						<a href='update_personalia.php?id=".$result_array["id"]."'>
 							<img src='icons/edit.png' alt='potlood'>
 						</a>
 					</td>
