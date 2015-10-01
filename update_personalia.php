@@ -21,6 +21,7 @@
 <h3>Wijzig zo nodig de onderstaande gegevens en druk op de knop....</h3>
 
 <form method="post" action="do_update_personalia.php">
+	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 	<table>
 		<tr>
 			<td>voornaam</td>
