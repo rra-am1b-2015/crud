@@ -15,11 +15,12 @@
 	
 	$record = mysqli_fetch_assoc($result);
 	
-	var_dump($record);
-	echo $record["haarkleur"];
+	//var_dump($record);
+	//echo $record["haarkleur"];
 ?>
+<h3>Wijzig zo nodig de onderstaande gegevens en druk op de knop....</h3>
 
-<form>
+<form method="post" action="do_update_personalia.php">
 	<table>
 		<tr>
 			<td>voornaam</td>
@@ -134,7 +135,17 @@
 		</tr>
 		<tr>
 			<td>geboortedatum: </td>
-			<td><input type="date" name="geboortedatum" value="2015-09-01"></td>
+			<td>
+				<input type="date" 
+					   name="geboortedatum"
+					   value="<?php
+								echo $record["geboortedatum"];					   
+							  ?>">		
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="update record" name="submit"></td>
 		</tr>
 	</table>
 </form>
