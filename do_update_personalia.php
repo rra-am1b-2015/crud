@@ -1,6 +1,4 @@
-<?php
-	echo "update maar....";
-	
+<?php	
 	include("db_connect.php");
 		
 	$query = "UPDATE `personalia` 
@@ -15,4 +13,8 @@
 			  WHERE  `id` 				= ".$_POST['id'].";";
 			  
 	mysqli_query($conn, $query) or die("Query-fout".mysqli_error());
+	
+	echo "Het wijzigen van de gegevens is uitgevoerd.<br>
+			U wordt teruggestuurd naar het overzichtsformulier";
+	header("refresh:4;personaliagegevens.php");
 ?>
