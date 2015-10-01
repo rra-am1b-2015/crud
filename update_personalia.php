@@ -74,15 +74,32 @@
 			<td>
 				<select name="haarkleur">
 					<option>--kies een haarkleur--</option>
-						<option value="023-bruin" >bruin</option>	
-						<option value="024-blond">blond</option>
+						
+						<option value="023-bruin" 
+								<?php
+									if ( $record['haarkleur'] == "023-bruin")
+									{
+										echo "selected";									
+									}								
+								?>>						
+							bruin						
+						</option>						
+						<option value="024-blond"
+								<?php
+									if ( $record['haarkleur'] == "024-blond")
+									{
+										echo "selected";									
+									}								
+								?>>
+							blond
+						</option>
 						<option value="025-grijs"
 								<?php
 									if ( $record['haarkleur'] == "025-grijs" )
 									{
 										echo "selected";
 									}
-								?> >
+								?>>
 								grijs
 						</option>
 						<option value="026-rood" 
@@ -91,11 +108,27 @@
 									{
 										echo "selected";
 									}
-								?> >
+								?>>
 									peentjesrood
 						</option>
-						<option value="027-zwart">zwart</option>
-						<option value="028-roze">roze</option>
+						<option value="027-zwart"
+								<?php
+									if ( $record['haarkleur'] == "027-zwart")
+									{
+										echo "selected";									
+									}								
+								?>>
+							zwart
+						</option>
+						<option value="028-roze"
+								<?php
+									if ( $record['haarkleur'] == "028-roze")
+									{
+										echo "selected";									
+									}								
+								?>>
+							roze
+						</option>
 				</select>
 			</td>
 		</tr>
