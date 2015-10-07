@@ -42,6 +42,7 @@ html, table
 					<th>".array_keys($result_array)[7]."</th>
 					<th>".array_keys($result_array)[8]."</th>
 					<th></th>
+					<th></th>
 		  	 </tr>";
 			 
 		mysqli_data_seek($result, 0);
@@ -61,6 +62,11 @@ html, table
 					<td>
 						<a href='update_personalia.php?id=".$result_array["id"]."'>
 							<img src='icons/edit.png' alt='potlood'>
+						</a>
+					</td>
+					<td>
+						<a href='delete_personalia.php?id=".$result_array["id"]."'>
+							<img src='icons/drop.png' alt='delete'>
 						</a>
 					</td>
 				</tr>";
